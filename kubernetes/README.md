@@ -27,3 +27,12 @@ export KUBECONFIG=/path/to/kubeconfig
 ```
 
 **Noted**: You must update server's IP on the configuration
+
+
+## Test
+
+kubectl config set-context --current --namespace=sandbox
+
+kubectl port-forward <pod-name> 8080:<pod-port> -n <namespace>
+
+kubectl port-forward techtrends-7ff989b97d-68mkm 8080:3111
