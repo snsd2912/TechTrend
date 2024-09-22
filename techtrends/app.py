@@ -42,7 +42,6 @@ def get_post_count():
 
 # Define the Flask application
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = ''
 
 # Define the main route of the web application 
 @app.route('/')
