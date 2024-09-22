@@ -35,7 +35,7 @@ def get_post(post_id):
 
 def get_post_count():
     connection = get_db_connection()
-    connection.execute('SELECT COUNT(*) FROM posts')
+    cursor = connection.execute('SELECT COUNT(*) FROM posts')
     post_count = cursor.fetchone()[0]
     connection.close()
     return post_count
