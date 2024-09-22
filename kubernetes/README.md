@@ -10,6 +10,10 @@ curl -sfL https://get.k3s.io | sh -
 
 curl -sfL https://get.k3s.io | K3S_URL=https://<master-ip>:6443 K3S_TOKEN=<master-token> sh -
 
+Check K8s nodes:
+
+![k8s-nodes](../screenshots/k8s-nodes.PNG)
+
 ### Update agent node configuration
 
 The agent node must have a valid kubeconfig file that points to the control plane (master node), which is responsible for the Kubernetes API. By default, the API server does not run on agent nodes in a Kubernetes cluster, so the kubectl command needs to contact the control plane.
@@ -31,8 +35,9 @@ export KUBECONFIG=/path/to/kubeconfig
 
 ## Test
 
+```
 kubectl config set-context --current --namespace=sandbox
-
 kubectl port-forward <pod-name> 8080:<pod-port> -n <namespace>
+```
 
-kubectl port-forward techtrends-7ff989b97d-68mkm 8080:3111
+![k8s-test](../screenshots/kubernetes-declarative-manifests.PNG)
